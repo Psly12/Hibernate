@@ -1,10 +1,9 @@
 <%-- 
-    Document   : register
-    Created on : 9 Feb, 2017, 4:29:10 PM
+    Document   : index
+    Created on : 9 Feb, 2017, 4:28:57 PM
     Author     : mca1
 --%>
 
-<%@page import="com.java.UserDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,16 +13,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <jsp:useBean id="obj" class="com.java.User">
-            <jsp:setProperty property="*" name="obj"/>
-        </jsp:useBean>
-        <%
-            int i=UserDao.register(obj);
-            if(i>0)
-                out.println("You are successfully registered");
-            else
-                out.print("Not Successfull");
-         %>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <form action="registerentry.jsp" method="post">
+            Name:<input type="text" name="name"/><br/><br/>
+            Password:<input type="password" name="password"/><br/><br/>
+            Email:<input type="text" name="email"/><br/><br/>
+            <input type="submit" name="Submit"/>
+        </form>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>

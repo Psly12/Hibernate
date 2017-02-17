@@ -1,6 +1,6 @@
 <%-- 
     Document   : index
-    Created on : 9 Feb, 2017, 4:28:57 PM
+    Created on : 17 Feb, 2017, 11:02:29 AM
     Author     : mca1
 --%>
 
@@ -13,12 +13,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="register.jsp" method="post">
-            Name:<input type="text" name="name"/><br/><br/>
-            Password:<input type="password" name="password"/><br/><br/>
-            Email:<input type="text" name="email"/><br/><br/>
-            <input type="submit" name="Submit"/>
-        </form>
+        <div class="panel panel-default">
+            <div class="panel-heading">Hibernate</div>
+            <div class="panel-body">Panel Content</div>
+        </div>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
