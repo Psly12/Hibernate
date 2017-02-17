@@ -9,7 +9,7 @@
         <%! int id;String pw;String name;String em;Session session1=null;%>
     </head>
     <body>
-        <table width="220" border="1">
+        <table width="220" border="1" class="table">
             <tr>
                 <th>ID</th><th>Name</th><th>E-Mail</th>
             </tr>

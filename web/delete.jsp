@@ -18,7 +18,7 @@
     <body>
     <jsp:include page="showuser.jsp"/>
     <h1>After Updation</h1>
-    <table width="220" border="1">
+    <table width="220" border="1" class="table">
         <tr>
                 <th>ID</th><th>Name</th><th>E-Mail</th>
         </tr>
