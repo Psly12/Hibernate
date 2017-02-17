@@ -1,23 +1,37 @@
+<%-- 
+    Document   : delete
+    Created on : 17 Feb, 2017, 10:15:00 AM
+    Author     : mca1
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hibernate Show</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <%@page import="java.util.*,com.java.*,org.hibernate.*,org.hibernate.cfg.*"%>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <%@page import="java.util.*,com.java.*,org.hibernate.*,org.hibernate.cfg.*"%>
         <%! int id;String pw;String name;String em;Session session1=null;%>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
     </head>
+    <h1>Before Updation</h1>
     <body>
-        <table width="220" border="1">
-            <tr>
+    <jsp:include page="showuser.jsp"/>
+    <h1>After Updation</h1>
+    <table width="220" border="1">
+        <tr>
                 <th>ID</th><th>Name</th><th>E-Mail</th>
-            </tr>
-            <%
+        </tr>
+        <%
+            int i=Integer.parseInt(request.getParameter("id"));
             Configuration cf=new Configuration();
             cf.configure();
             SessionFactory sf=cf.buildSessionFactory();
             session1=sf.openSession();
+            User user=null;          
+            user=(User)session1.get(User.class,i);/*Retriving obj which we want to update*/
+            session1.delete(user);
+            session1.beginTransaction().commit();
             String SQL_QUERY="from User";/*use bean class*/
             Query query = session1.createQuery(SQL_QUERY);
             Iterator it=query.iterate();
@@ -33,7 +47,7 @@
             }
             session1.close();
             %>
-        </table>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </table>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
