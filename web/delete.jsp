@@ -14,14 +14,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <h1>Before Updation</h1>
+    <h1>Before Deletion</h1>
     <body>
     <jsp:include page="showuser.jsp"/>
-    <h1>After Updation</h1>
-    <table width="220" border="1" class="table">
-        <tr>
+    </div>
+    <h1>After Deletion</h1>
+    <h1>User Details</h1>
+        <div class="panel panel-default">
+            <div class="panel-body">
+        <table class="table-striped table table-bordered">
+            <tr>
                 <th>ID</th><th>Name</th><th>E-Mail</th>
-        </tr>
+            </tr>
         <%
             int i=Integer.parseInt(request.getParameter("id"));
             Configuration cf=new Configuration();
@@ -47,7 +51,10 @@
             }
             session1.close();
             %>
-    </table>
+            </table>
+        <a href="index.jsp" class="btn btn-info btn-block" role="button">Back to index</a>
+        </div>
+                   </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>

@@ -17,11 +17,15 @@
     <h1>Before Updation</h1>
     <body>
     <jsp:include page="showuser.jsp"/>
+    </div>
     <h1>After Updation</h1>
-    <table width="220" border="1" class="table">
-        <tr>
+    <h1>User Details</h1>
+        <div class="panel panel-default">
+            <div class="panel-body">
+        <table class="table-striped table table-bordered">
+            <tr>
                 <th>ID</th><th>Name</th><th>E-Mail</th>
-        </tr>
+            </tr>
         <%
             int i=Integer.parseInt(request.getParameter("id"));
             String name=request.getParameter("name");
@@ -55,7 +59,9 @@
             }
             session1.close();
             %>
-    </table>
+   </table>
+        <a href="index.jsp" class="btn btn-info btn-block" role="button">Back to index</a>
+        </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
